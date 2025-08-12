@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QuoteSpark by Tonypio — Daily Motivation, Love & Success Quotes</title>
+
+  <!-- SEO -->
+  <meta name="description" content="QuoteSpark by Tonypio delivers daily motivation, love, success, and life quotes. Save, share, and explore categorized quotes with a clean, fast UI." />
+  <meta name="keywords" content="quotes, motivation, love quotes, success quotes, inspirational quotes, daily quotes, QuoteSpark, Tonypio" />
+  <link rel="canonical" href="https://your-domain.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="QuoteSpark by Tonypio" />
+  <meta property="og:description" content="Daily motivation, love & success quotes. Save and share easily." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.example/" />
+  <meta property="og:image" content="https://your-domain.example/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/style.css" />
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9880462518701245" crossorigin="anonymous"></script>
+
+  <!-- Preload BG for quicker paint -->
+  <link rel="preload" as="image" href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80" />
+</head>
+<body class="light">
+  <!-- Background -->
+  <div class="background-image" aria-hidden="true"></div>
+
+  <header class="container">
+    <div class="brand">
+      <h1>✨ QuoteSpark by <span class="highlight">Tonypio</span></h1>
+      <p class="tagline">Daily inspiration — clean, fast, and shareable.</p>
+      <a href="featuredquotes.html" class="Featured">Featured Quotes</a>
+    </div>
+
+    <div class="header-actions">
+      <!-- Theme toggle -->
+      <label class="switch" aria-label="Toggle dark theme">
+        <input type="checkbox" id="themeSwitch" />
+        <span class="slider"><span class="icon" aria-hidden="true">🌞</span></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- Top Ad -->
+  <div class="container ad-slot" aria-label="advertisement">
+    <!-- Example responsive ad slot -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9880462518701245"
+         data-ad-slot="0000000000"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
+
+  <!-- Quote of the Day -->
+  <section class="container quote-of-day" aria-live="polite">
+    <p>🌟 <span id="quoteOfDay">Loading Quote of the Day...</span></p>
+  </section>
+
+  <main class="container layout">
+    <!-- Sidebar: Categories -->
+    <aside class="sidebar">
+      <h2 class="visually-hidden">Categories</h2>
+      <nav class="categories" id="categoryNav">
+        <button class="cat active" data-cat="all">All</button>
+        <button class="cat" data-cat="love">Love</button>
+        <button class="cat" data-cat="motivation">Motivation</button>
+        <button class="cat" data-cat="success">Success</button>
+        <button class="cat" data-cat="life">Life</button>
+        <button class="cat" data-cat="friendship">Friendship</button>
+        <button class="cat" data-cat="wisdom">Wisdom</button>
+      </nav>
+
+      <div class="tools">
+        <input id="searchBox" type="search" placeholder="Search quotes…" aria-label="Search quotes" />
+        <button id="clearSearch" class="muted">Clear</button>
+      </div>
+
+      <div class="saved-section">
+        <button id="viewSavedBtn">📜 View Saved Quotes</button>
+        <button id="exportSavedBtn" class="muted small">Export JSON</button>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <section class="content">
+      <article class="quote-card" aria-live="polite">
+        <p id="quote" class="quote-text">Loading quote...</p>
+        <p id="author" class="quote-author"></p>
+
+        <div class="actions">
+          <button id="newQuoteBtn" class="primary">🔄 New Quote</button>
+          <button id="saveQuoteBtn" class="secondary">❤️ Save</button>
+
+          <div class="share">
+            <button class="share-btn">📤 Share ▼</button>
+            <div class="share-options" role="menu" aria-hidden="true">
+              <button id="copyQuote" role="menuitem">Copy</button>
+              <button id="shareWhatsApp" role="menuitem">WhatsApp</button>
+              <button id="shareTwitter" role="menuitem">X / Twitter</button>
+              <button id="shareFacebook" role="menuitem">Facebook</button>
+              <button id="shareTelegram" role="menuitem">Telegram</button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- In-content Ad -->
+      <div class="ad-slot" aria-label="advertisement">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9880462518701245"
+             data-ad-slot="1111111111"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+      </div>
+
+      <!-- Results Grid (for search / category lists) -->
+      <section id="resultsGrid" class="grid" aria-live="polite"></section>
+    </section>
+  </main>
+
+  <!-- Saved Quotes Modal -->
+  <div id="savedModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="savedTitle">
+    <div class="modal-content">
+      <button id="closeModal" class="close" aria-label="Close">&times;</button>
+      <h2 id="savedTitle">Saved Quotes</h2>
+      <ul id="savedQuotesList" class="saved-list"></ul>
+    </div>
+  </div>
+
+  <footer class="container">
+    <div class="ad-slot" aria-label="advertisement">
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-9880462518701245"
+           data-ad-slot="2222222222"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+    </div>
+    <p class="footer-text">© 2025 QuoteSpark by Tonypio • Built for speed and clarity</p>
+   <nav class="footer-links">
+  <a href="privacypolicy.html">Privacy Policy</a> |
+  <a href="terms.html">Terms of Service</a> |
+  <a href="about.html">About</a> |
+  <a href="featuredquotes.html">Featured Quotes</a> |
+ </nav> 
+
+  </footer>
+
+  <script src="./js/script.js" defer></script>
+</body>
+</html>
